@@ -44,3 +44,12 @@ Group Activity 1-2
   d) remove the actor or turn to a different direction
   e) remove the jumper or turn to a different direction
   f) What can the jumper actually jump over: flowers, rocks, other jumpers?
+  
+
+2:a) Class Jumper should extend Class Actor
+  b) Yes, bug is somewhat similar to Jumper, however there are distinct differences that force them to be completely separate
+  c) Yes, there should be a constructor and it can have either no parameters or a parameter for the Jumper's color
+  d) Act() should be overwritten otherwise nothing else from Actor needs to be changed. 
+  e) turn(), move(), and canMove() all need to be added. 
+  f) To test the class we have to put it in all situations to see how the actor reacts. We have to test with a rock in front of it for it to jump over, with a rock in the position it should land on, with a flower in the position it should land on or a flower in the position it should jump over, another Jumper or a bug for it to land on or jump over, and finally no obstacles in its path. We need to confirm that when it cannot move it will turn and then attempt to move again. We also need to confirm that it performs appropriately along the end of the grid.
+
