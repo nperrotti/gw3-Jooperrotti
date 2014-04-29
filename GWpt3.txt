@@ -1,0 +1,46 @@
+Nicholas Perrotti
+https://github.com/nperrotti/gw3-Jooperrotti
+HW#33 -- GridWorld 
+Part 3
+
+2014-04-28
+
+Do You Know sets 3-6:
+
+3:1) loc1.getRow()
+  2) false
+  3) A Location with row = 4 col = 4
+  4) 135 (SOUTHEAST)
+  5) getAdjacentLocation takes a parameter defining the direction of the intended adjacent location
+4:1) getOccupiedLocations().size() would return the number of objects in a grid. getNumRows()*getNumCols() - getOccupiedLocations().size() equals the number of empty locations (total locations - total objects)
+  2) isValid(new Location(10, 10))
+  3) The code is not supplied because Grid is an interface, the code is supplied in BoundedGrid and UnboundedGrid, the classes that implement interface Grid.
+  4) ArrayList is better because of its variable size. We do not know how many objects we have to return so it is difficult to instantiate an array, or we will have to grow our array which is difficult
+5:1) Location, Direction, and color
+  2) it's color is blue and it's direction is NORTH (0)
+  3) Because there are several functions that will be constant through all subclasses of actor and can be written in the superclass Actor
+  4) a) no if the actor is already there, it cannot appear again, this would cause an error
+     b) no, once its removed it is gone, calling remove again would cause an error
+     c) yes an actor can do this. When tested, this compiles and runs
+  5) setDirection(getDirection() +90)
+6:1) if(!gr.isValid(next)) return false determines if the Location is off the grid
+  2)return (neighbor == null) || (neighbor instanceOf Flower) checks that the next space is not a rock
+  3) The isValid() method is used to confirm the location is on the grid, the get() method is used to know what type of object is at the Location
+  4)the getAdjacentLocation() method is used to find the next location the character will move to.
+  5) getGrid() and getLocation() are used by the canMove() method
+  6) The bug removes itself from the grid and a Flower is placed in the location it was on.
+  7) lot is needed because after removeSelfFromGrid() is called, the bug would no longer have a location.
+  8) Flower flower = new Flower(getColor());  //The flowers are initialized with the color of the bug indicated by getColor().
+  9) When a bug removes itself from the grid, it will place a flower into its location.
+  10) Grid<Actor> gr = getGrid(); 
+    	Location loc = getLocation(); 
+  	  flower.putSelfInGrid(gr, loc);
+  11) four times
+  
+Group Activity 1-2
+1:a) turn to a different direction 
+  b) turn to a different direction
+  c) turn to a different direction
+  d) remove the actor or turn to a different direction
+  e) remove the jumper or turn to a different direction
+  f) What can the jumper actually jump over: flowers, rocks, other jumpers?
